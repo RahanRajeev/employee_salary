@@ -14,7 +14,7 @@ const Addreview = () => {
     useEffect(() => {
         const fetchReviews = async () => {
             try {
-                const res = await axios.get("http://localhost:7000/user/viewreviews");
+                const res = await axios.get("https://employee-salary-1.onrender.com/user/viewreviews");
                 setReviews(res.data.data);
                 setLoading(false);
             } catch (error) {
@@ -34,7 +34,7 @@ const Addreview = () => {
         }
 
         try {
-            const response = await axios.post("http://localhost:7000/user/addreview", {
+            const response = await axios.post("https://employee-salary-1.onrender.com/user/addreview", {
                 rating,
                 comment,
                 uid

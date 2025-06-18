@@ -8,7 +8,7 @@ const Complaint = () => {
     const complaintpost=async(e)=>{
         e.preventDefault()
         const uid=sessionStorage.getItem('uid')
-        const res=await axios.post("http://localhost:7000/user/complaint",{complaint,uid})
+        const res=await axios.post("https://employee-salary-1.onrender.com/user/complaint",{complaint,uid})
         
         if(res.data.status==='ok'){
             comnav('/userhome')

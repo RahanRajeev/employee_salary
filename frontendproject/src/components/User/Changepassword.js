@@ -9,7 +9,7 @@ const Changepassword = () => {
   const changenav=useNavigate()
   const changepass=async()=>{
     const uid=sessionStorage.getItem('uid')
-    const res=await axios.post('http://localhost:7000/user/userchangepassword',{currentpass,newpass,confirmpass,uid})
+    const res=await axios.post('https://employee-salary-1.onrender.com/user/userchangepassword',{currentpass,newpass,confirmpass,uid})
     console.log(uid);
 
     if(res.data.status==='change'){

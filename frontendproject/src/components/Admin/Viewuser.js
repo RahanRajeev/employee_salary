@@ -6,7 +6,7 @@ const Viewuser = () => {
 
     // Fetch users from backend
     const getUsers = async () => {
-        const res = await axios.get("http://localhost:7000/admin/viewuser");
+        const res = await axios.get("https://employee-salary-1.onrender.com/admin/viewuser");
         setUsers(res.data.data);
 
         console.log(res.data.data);
@@ -28,7 +28,7 @@ const Viewuser = () => {
     //   block
     const [appr, setappr] = useState(false);
     const blockuser = async (id) => {
-        const res = await axios.get(`http://localhost:7000/admin/block/${id}`)
+        const res = await axios.get(`https://employee-salary-1.onrender.com/admin/block/${id}`)
         console.log(res.data);
         if (res.data.status === 'block') {
             // alert('blocked successfully')
@@ -41,7 +41,7 @@ const Viewuser = () => {
 
     
     const unblockuser = async (id) => {
-        const res = await axios.get(`http://localhost:7000/admin/unblock/${id}`)
+        const res = await axios.get(`https://employee-salary-1.onrender.com/admin/unblock/${id}`)
         console.log(res.data);
         if (res.data.status === 'unblock') {
             // alert('unblocked successfully')
@@ -64,7 +64,7 @@ const Viewuser = () => {
                         className="bg-white shadow-lg rounded-lg overflow-hidden p-5 transition transform hover:scale-105"
                     >
                         <img
-                            src={`http://localhost:7000/${user.image}`}
+                            src={`https://employee-salary-1.onrender.com/${user.image}`}
                             alt="User"
                             className="w-24 h-24 mx-auto rounded-full object-cover border-4 border-gray-200"
                         />

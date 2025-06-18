@@ -12,7 +12,7 @@ const Viewprofile = () => {
 
     const profile = async () => {
         const uid = sessionStorage.getItem('uid');
-        const res = await axios.get("http://localhost:7000/user/viewprofile", { params: { uid } });
+        const res = await axios.get("https://employee-salary-1.onrender.com/user/viewprofile", { params: { uid } });
         setname(res.data.data.name);
         setemail(res.data.data.email);
         setgender(res.data.data.gender);
@@ -44,7 +44,7 @@ const Viewprofile = () => {
                 <div style={styles.profileCard}>
                     <div style={styles.imageContainer}>
                         <img 
-                            src={image?.startsWith("http") ? image : `http://localhost:7000/${image}`} 
+                            src={image?.startsWith("http") ? image : `https://employee-salary-1.onrender.com/${image}`} 
                             alt="Profile" 
                             style={styles.profileImage} 
                             crossOrigin="anonymous" 

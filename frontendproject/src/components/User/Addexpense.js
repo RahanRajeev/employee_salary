@@ -9,7 +9,7 @@ const Addexpense = () => {
 
     const viewcat = async () => {
             
-        const res = await axios.get("http://localhost:7000/user/expense");
+        const res = await axios.get("https://employee-salary-1.onrender.com/user/expense");
         setCategories(res.data.data);
         console.log(res.data.data);
     
@@ -30,7 +30,7 @@ const Addexpense = () => {
 
        
 
-        const res=axios.post("http://localhost:7000/user/addexpense", { category: selectedCategory,uid: userId, amount })
+        const res=axios.post("https://employee-salary-1.onrender.com/user/addexpense", { category: selectedCategory,uid: userId, amount })
             .then(response => {
                 alert("Expense added successfully!");
                 setSelectedCategory("");

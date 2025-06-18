@@ -8,7 +8,7 @@ const Addbudget = () => {
   const handleAddBudget = async(e) => {
     const userId = sessionStorage.getItem("uid");
     e.preventDefault();
-    const res=await axios.post("http://localhost:7000/user/addbudget",{budget,uid:userId});
+    const res=await axios.post("https://employee-salary-1.onrender.com/user/addbudget",{budget,uid:userId});
 
     if (!budget) {
       alert("Please enter a budget amount");

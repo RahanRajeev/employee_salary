@@ -10,7 +10,7 @@ const Viewreply = () => {
         const fetchComplaints = async () => {
             try {
                 const uid = sessionStorage.getItem('uid');
-                const res = await axios.get("http://localhost:7000/user/viewreply", { params: { uid } });
+                const res = await axios.get("https://employee-salary-1.onrender.com/user/viewreply", { params: { uid } });
 
                 console.log("API Response:", res.data);
 
@@ -49,7 +49,7 @@ const Viewreply = () => {
                             <div style={styles.userSection}>
                             <img 
     src={complaint.userid?.image 
-        ? `http://localhost:7000/${complaint.userid.image}` 
+        ? `https://employee-salary-1.onrender.com/${complaint.userid.image}` 
         : "https://dummyimage.com/150x150/cccccc/ffffff.png&text=No+Image"} 
     alt="User" 
     style={styles.userIcon} 

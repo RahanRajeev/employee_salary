@@ -21,7 +21,7 @@ const Viewexpense = () => {
         const fetchData = async () => {
             try {
                 const uid = sessionStorage.getItem("uid");
-                const res = await axios.get("http://localhost:7000/user/viewexpense", { params: { uid } });
+                const res = await axios.get("https://employee-salary-1.onrender.com/user/viewexpense", { params: { uid } });
 
                 if (res.data) {
                     setExpenses(res.data.data || []);

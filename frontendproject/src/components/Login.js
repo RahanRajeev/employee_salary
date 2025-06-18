@@ -21,7 +21,7 @@ const Login = () => {
       return;
     }
 
-    const res = await axios.post('http://localhost:7000/user/login', { logname, logpassword });
+    const res = await axios.post('https://employee-salary-1.onrender.com/user/login', { logname, logpassword });
     console.log(res.data.uid);
     if (res.data.status === 'ok') {
       sessionStorage.setItem('uid', res.data.uid);
@@ -53,7 +53,7 @@ const Login = () => {
           const profile = response.data;
 
           // Send this profile data to backend to save or authenticate
-          const backendResponse = await axios.post('http://localhost:7000/user/googlelogin', {
+          const backendResponse = await axios.post('https://employee-salary-1.onrender.com/user/googlelogin', {
             name: profile.name,
             email: profile.email,
             googleId: profile.id,

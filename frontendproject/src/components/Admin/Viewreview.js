@@ -10,7 +10,7 @@ const Viewreview = () => {
     useEffect(() => {
         const fetchReviews = async () => {
             try {
-                const res = await axios.get("http://localhost:7000/user/viewreviews");
+                const res = await axios.get("https://employee-salary-1.onrender.com/user/viewreviews");
                 setReviews(res.data.data);
                 setLoading(false);
             } catch (err) {
@@ -40,7 +40,7 @@ const Viewreview = () => {
                             {/* User Info */}
                             <div className="flex items-center mb-4">
                                 <img 
-                                    src={`http://localhost:7000/${review.userid.image}` || "https://via.placeholder.com/60"} 
+                                    src={`https://employee-salary-1.onrender.com/${review.userid.image}` || "https://via.placeholder.com/60"} 
                                     alt="User" 
                                     className="w-14 h-14 rounded-full border-2 border-yellow-400 shadow-md mr-4"
                                 />

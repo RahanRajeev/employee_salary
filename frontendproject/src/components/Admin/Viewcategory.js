@@ -14,7 +14,7 @@ const Viewcategory = () => {
 
     const fetchCategories = async () => {
         try {
-            const res = await axios.get('http://localhost:7000/admin/viewcategory');
+            const res = await axios.get('https://employee-salary-1.onrender.com/admin/viewcategory');
             setCategories(res.data.data);
         } catch (error) {
             console.error('Error fetching categories:', error);
@@ -24,7 +24,7 @@ const Viewcategory = () => {
     // Delete category
     const deleteCategory = async (id) => {
        
-            const res=await axios.get(`http://localhost:7000/admin/deletecat/${id}`);
+            const res=await axios.get(`https://employee-salary-1.onrender.com/admin/deletecat/${id}`);
         
 
         if(res.data.status==='ok'){

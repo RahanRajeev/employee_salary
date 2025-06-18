@@ -45,7 +45,7 @@ const Mainhome = () => {
   const userreg = async (e) => {
     e.preventDefault()
     setIsButtonClicked(true);
-    const res = await axios.post("http://localhost:7000/user/userreg",
+    const res = await axios.post("https://employee-salary-1.onrender.com/user/userreg",
       { username, useremail, usergender, userphone, userpassword, usercpassword, userfile },
       { headers: { 'Content-Type': 'multipart/form-data' } })
     if (userphone.length !== 10 || !isStrongPassword(userpassword)) {
@@ -76,7 +76,7 @@ const Mainhome = () => {
     setLoading(true);
 
     const checkEmail = async () => {
-      const response = await axios.get(`http://localhost:7000/user/checkemail/${useremail}`);
+      const response = await axios.get(`https://employee-salary-1.onrender.com/user/checkemail/${useremail}`);
 
       if (response.data.exists) {
         setMessage("Email already exists!");

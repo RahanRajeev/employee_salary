@@ -42,7 +42,7 @@ const Viewcomplaint = () => {
   const [viewcom, setviewcom] = useState([])
 
   const getdata = async () => {
-    const res = await axios.get("http://localhost:7000/admin/viewcomplaint")
+    const res = await axios.get("https://employee-salary-1.onrender.com/admin/viewcomplaint")
     console.log(res.data.data);
     setviewcom(res.data.data)
   }
@@ -84,7 +84,7 @@ const Viewcomplaint = () => {
    
 
     if (!replyInputs[id]) return;
-    const res = await axios.post("http://localhost:7000/admin/reply_post", {
+    const res = await axios.post("https://employee-salary-1.onrender.com/admin/reply_post", {
       reply: replyInputs[id],
       pid: id,
     });
@@ -176,7 +176,7 @@ const Viewcomplaint = () => {
         {viewcom.map((i) => (
           <div key={i._id} className="complaint-container">
             <div className="complaint-header">
-              <img className="user-image" src={`http://localhost:7000/${i.userid.image}`} alt="User" />
+              <img className="user-image" src={`https://employee-salary-1.onrender.com/${i.userid.image}`} alt="User" />
               <div className="user-info">
                 <strong>{i.userid.name}</strong><br />
                 <small>{i.date}</small>

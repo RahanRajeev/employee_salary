@@ -9,7 +9,7 @@ const Editprofile = ({name,email,phone,gender,image,setname,setemail,setgender,s
     const editprofile=async(e)=>{
       e.preventDefault()
       const uid=sessionStorage.getItem('uid')
-      const response=await axios.post("http://localhost:7000/user/editprofile",
+      const response=await axios.post("https://employee-salary-1.onrender.com/user/editprofile",
       {name,email,gender,phone,uid,image},
       {headers:{'Content-Type':'multipart/form-data'}}
       

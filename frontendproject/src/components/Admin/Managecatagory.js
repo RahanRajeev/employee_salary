@@ -12,7 +12,7 @@ const Managecatagory = () => {
 
   const addCategory =async (e) => {
     e.preventDefault();
-    const res=await axios.post("http://localhost:7000/admin/addcategory",{category});
+    const res=await axios.post("https://employee-salary-1.onrender.com/admin/addcategory",{category});
     if (category.trim() && !categories.includes(category)) {
       setCategories([...categories, category]);
       setCategory("");
