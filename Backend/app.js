@@ -8,14 +8,17 @@ const cors=require('cors')
 dotenv.config()
 const port=process.env.PORT
 db()
+const MongoStore = require('connect-mongo');
 
 
 
 app.use(session({
-    secret:'123',
-    resave:true,
-    saveUninitialized:true
-}))
+    secret: '123',
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.MONGODBURL }),
+    cookie: { secure: false } // set to true only if using HTTPS
+  }));
 
 const admin=require('./router/admin')
 const user=require('./router/user')
@@ -34,6 +37,11 @@ app.use('/admin',admin)
 
 
 
-app.listen(port,()=>{
-    console.log(cli.magenta(`http://localhost:${port}`));
-})
+app.listen(port, () => {
+  const URL = process.env.NODE_ENV === 'production'
+    ? `https://employee-salary-1.onrender.com`
+    : `http://localhost:${port}`;
+    
+  console.log(cli.magenta(`Server running at ${URL}`));
+});
+
